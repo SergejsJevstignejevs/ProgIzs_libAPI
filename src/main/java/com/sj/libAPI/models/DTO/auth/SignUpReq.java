@@ -30,7 +30,7 @@ public class SignUpReq {
     private boolean isWorker;
 
     @NotNull
-    private UUID libraryId;
+    private UUID library;
 
     @JsonProperty("isWorker")
     public boolean getIsWorker() {

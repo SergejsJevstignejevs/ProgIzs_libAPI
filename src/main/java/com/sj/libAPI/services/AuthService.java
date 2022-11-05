@@ -76,7 +76,7 @@ public class AuthService {
             newWorker.setContactPhone(data.getContactPhone());
             newWorker.setEmail(data.getEmail().toLowerCase(Locale.ROOT));
             newWorker.setPassword(_encoder.encode(data.getPassword()));
-            newWorker.setLibrary(new Library(data.getLibraryId()));
+            newWorker.setLibrary(new Library(data.getLibrary()));
             _workerRepository.save(newWorker);
 
         }
