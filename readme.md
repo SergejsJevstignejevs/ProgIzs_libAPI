@@ -26,7 +26,7 @@
 1. **SignUp for user or worker**
 
    * Base URL : http://localhost:8080/auth/signup
-   * Required JSON properties : name(String), surname(String), contactPhone(int), email(String), password(String), isWorker(boolean)(false if user), library(UUID)(if it is worker)
+   * Required JSON properties : name(String), surname(String), contactPhone(int), email(String), password(String), isWorker(boolean)(false if user), libraryId(UUID)(if it is worker)
    * Optional JSON properties : none
    * Returns `true` if operation is successful, if no then `false`
 ----
