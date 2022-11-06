@@ -52,8 +52,16 @@ public class BookReservation {
     private Worker worker;
 
     public BookReservation(BookReservationDTO dto) {
-        this.borrowDate = LocalDate.parse(dto.getBorrowDate());
-        this.returnDate = LocalDate.parse(dto.getReturnDate());
+        if(dto.getBorrowDate() != null){
+
+            this.borrowDate = LocalDate.parse(dto.getBorrowDate());
+
+        }
+        if(dto.getReturnDate() != null){
+
+            this.returnDate = LocalDate.parse(dto.getReturnDate());
+            
+        }
         this.isReturned = dto.getIsReturned();
         this.book = new Book(dto.getBookId());
         this.user = new User(dto.getUserId());
