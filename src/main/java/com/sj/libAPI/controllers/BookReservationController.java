@@ -27,8 +27,8 @@ public class BookReservationController {
     }
 
     @PostMapping
-    public void addBookReservation(@RequestBody BookReservationDTO bookReservationDTO){
-        _bookReservationService.addBookReservation(bookReservationDTO);
+    public boolean addBookReservation(@RequestBody BookReservationDTO bookReservationDTO){
+        return _bookReservationService.addBookReservation(bookReservationDTO);
     }
 
     @PutMapping("{id}")
@@ -37,8 +37,8 @@ public class BookReservationController {
     }
 
     @DeleteMapping("{id}")
-    public void deleteBookReservation(@PathVariable UUID id){
-        _bookReservationService.deleteBookReservation(id);
+    public boolean deleteBookReservation(@PathVariable UUID id){
+        return _bookReservationService.deleteBookReservation(id);
     }
 
 }

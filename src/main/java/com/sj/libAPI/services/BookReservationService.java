@@ -29,12 +29,13 @@ public class BookReservationService {
         return _bookReservationRepository.findById(id).orElse(null);
     }
 
-    public void addBookReservation(BookReservationDTO bookReservationDTO){
+    public boolean addBookReservation(BookReservationDTO bookReservationDTO){
         BookReservation newBookReservation = new BookReservation(bookReservationDTO);
         newBookReservation.setBorrowDate(LocalDate.now());
         newBookReservation.setReturnDate(newBookReservation.getBorrowDate().plus(1, ChronoUnit.WEEKS));
         newBookReservation.setIsReturned(false);
         _bookReservationRepository.save(newBookReservation);
+        return true;
     }
 
     public void updateBookReservation(UUID id, BookReservationDTO bookReservationDTO){
@@ -43,8 +44,9 @@ public class BookReservationService {
         _bookReservationRepository.save(updatedBookReservation);
     }
 
-    public void deleteBookReservation(UUID id){
+    public boolean deleteBookReservation(UUID id){
         _bookReservationRepository.deleteById(id);
+        return true;
     }
 
 }
