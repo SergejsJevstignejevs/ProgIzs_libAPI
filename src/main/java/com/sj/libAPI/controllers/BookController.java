@@ -26,6 +26,11 @@ public class BookController {
         return _bookService.getBookById(id);
     }
 
+    @GetMapping("bookReservation/{bookReservationId}")
+    public Book getBookByBookReservationId(@PathVariable UUID bookReservationId){
+        return _bookService.getBookByBookReservationId(bookReservationId);
+    }
+
     @PostMapping
     public void addBook(@RequestBody BookDTO bookDTO){
         _bookService.addBook(bookDTO);

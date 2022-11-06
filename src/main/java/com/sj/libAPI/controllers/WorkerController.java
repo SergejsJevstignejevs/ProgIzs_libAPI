@@ -26,6 +26,11 @@ public class WorkerController {
         return _workerService.getWorkerById(id);
     }
 
+    @GetMapping("email/{email}")
+    public Worker getUserByEmail(@PathVariable String email){
+        return _workerService.getWorkerByEmail(email);
+    }
+
     @PostMapping
     public void addWorker(@RequestBody WorkerDTO workerDTO){
         _workerService.addWorker(workerDTO);

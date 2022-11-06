@@ -24,6 +24,10 @@ public class BookService {
         return _bookRepository.findById(id).orElse(null);
     }
 
+    public Book getBookByBookReservationId(UUID bookReservationId){
+        return _bookRepository.findByBookReservationsId(bookReservationId);
+    }
+
     public void addBook(BookDTO bookDTO){
         Book newBook = new Book(bookDTO);
         _bookRepository.save(newBook);

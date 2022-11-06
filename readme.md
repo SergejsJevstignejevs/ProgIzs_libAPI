@@ -92,6 +92,11 @@
    * Base URL : http://localhost:8080/workers/id
    * Parameter `id` in url is id of the worker
 
+3. **Get one worker by his email**
+
+   * Base URL : http://localhost:8080/workers/email/{email}
+   * Parameter `{email}` in url is email of the worker
+
 #### Method POST
 
 1. **Add worker**
@@ -129,6 +134,11 @@
 
    * Base URL : http://localhost:8080/books/id
    * Parameter `id` in url is id of the book
+
+3. **Get one book by reservationId**
+
+   * Base URL : http://localhost:8080/books/bookReservation/bookReservationId
+   * Parameter `bookReservationId` in url is id of the reservation
 
 #### Method POST
 

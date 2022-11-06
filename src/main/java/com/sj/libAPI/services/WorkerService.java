@@ -31,6 +31,10 @@ public class WorkerService {
         return _workerRepository.findById(id).orElse(null);
     }
 
+    public Worker getWorkerByEmail(String email){
+        return _workerRepository.findByEmail(email);
+    }
+
     public void addWorker(WorkerDTO workerDTO){
         Worker newWorker = new Worker(workerDTO);
         newWorker.setCreatedAt(LocalDate.now());

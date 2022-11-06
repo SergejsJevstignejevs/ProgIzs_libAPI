@@ -30,6 +30,10 @@ public class UserService {
         return _userRepository.findById(id).orElse(null);
     }
 
+    public User getUserByEmail(String email){
+        return _userRepository.findByEmail(email);
+    }
+
     public void addUser(UserDTO userDTO){
         User newUser = new User(userDTO);
         newUser.setCreatedAt(LocalDate.now());
